@@ -1,4 +1,4 @@
-name: Jest
+name: Frontend tests
 
 on: push
 
@@ -8,7 +8,7 @@ defaults:
 
 jobs:
   jest:
-    name: Run the Jest test suite
+    name: Jest unit tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
