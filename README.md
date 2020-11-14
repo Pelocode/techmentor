@@ -5,13 +5,17 @@
 This app uses [Docker](https://www.docker.com/products/docker-desktop) for the
 development environment. If you don't have it yet, please download and install it.
 
-To run this app, first build the docker image with:
+### First-time setup
+
+To install this app for the first time, build the docker image with:
 
 ```sh
 docker-compose build --no-cache
 ```
 
-Then run the server with:
+### Every time
+
+Run the servers with:
 
 ```sh
 docker-compose up
