@@ -17,6 +17,7 @@ jobs:
         env:
           MYSQL_DATABASE: techmentor
           MYSQL_ROOT_PASSWORD: techmentor
+          MYSQL_AUTHENTICATION_PLUGIN: mysql_native_password
         ports:
           - "3306:3306"
         options: >-
