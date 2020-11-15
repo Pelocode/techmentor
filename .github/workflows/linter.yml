@@ -35,6 +35,7 @@ jobs:
       ################################
       - name: Laravel setup
         run: |
+          cd backend
           composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
       ################################
