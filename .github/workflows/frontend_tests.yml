@@ -25,6 +25,6 @@ jobs:
       - name: Build the file
         run: yarn build --if-present
       - name: Run the tests
-        run: yarn test
         env:
           CI: true
+        run: yarn test
