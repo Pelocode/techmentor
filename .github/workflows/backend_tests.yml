@@ -10,6 +10,7 @@ jobs:
   larevel-tests:
     name: PHPUnit suite
     runs-on: ubuntu-latest
+    container: php:7.2-apache
     services:
       mysql:
         image: mysql:8.0
