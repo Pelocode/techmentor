@@ -16,13 +16,13 @@ services:
 
   mysql:
     image: "mysql:8.0"
-    command: mysqld --default-authentication-plugin=mysql_native_password
     restart: always
     tty: true
     environment:
       MYSQL_DATABASE: techmentor
       MYSQL_ROOT_PASSWORD: techmentor
     volumes:
+      - ./mysql/custom.cnf:/etc/mysql/conf.d
       - dbdata:/var/lib/mysql/
     ports:
       - "3306:3306"

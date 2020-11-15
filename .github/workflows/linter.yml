@@ -35,7 +35,7 @@ jobs:
       ################################
       - name: Laravel setup
         run: |
-          composer install --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+          composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
       ################################
       # Run Linter against code base #

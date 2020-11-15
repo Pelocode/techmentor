@@ -20,6 +20,8 @@ jobs:
           MYSQL_AUTHENTICATION_PLUGIN: mysql_native_password
         ports:
           - "3306:3306"
+        volumes:
+          - ./mysql/custom.cnf:/etc/mysql/conf.d
         options: >-
           --health-cmd="mysqladmin ping"
           --health-interval=10s
@@ -36,7 +38,7 @@ jobs:
           docker-php-ext-install bcmath pdo_mysql
           cp .env.ci .env
           curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-          composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+          composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
           php artisan key:generate
           chmod -R 777 storage bootstrap/cache
       - name: Execute tests (Unit and Feature tests) via PHPUnit
