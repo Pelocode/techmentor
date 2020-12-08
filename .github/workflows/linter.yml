@@ -24,7 +24,7 @@ jobs:
       ##########################
       # Checkout the code base #
       ##########################
-      - name: Checkout Code
+      - name: Checkout Codez
         uses: actions/checkout@v2
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
@@ -50,4 +50,5 @@ jobs:
           VALIDATE_PHP_PHPSTAN: false
           VALIDATE_PHP_PHPCS: false
           VALIDATE_PHP_BUILTIN: false
+          FILTER_REGEX_EXCLUDE: ".*backend/vendor.*"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
