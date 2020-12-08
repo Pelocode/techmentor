@@ -46,5 +46,8 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: main
-          FILTER_REGEX_EXCLUDE: ".*/backend/vendor.*"
+          VALIDATE_PHP_PSALM: false
+          VALIDATE_PHP_PHPSTAN: false
+          VALIDATE_PHP_PHPCS: false
+          VALIDATE_PHP_BUILTIN: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
