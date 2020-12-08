@@ -15,14 +15,13 @@ services:
       - mysql
 
   mysql:
-    image: "mysql:8.0"
+    image: "mysql:5.7"
     restart: always
     tty: true
     environment:
       MYSQL_DATABASE: techmentor
       MYSQL_ROOT_PASSWORD: techmentor
     volumes:
-      - ./mysql/custom.cnf:/etc/mysql/conf.d
       - dbdata:/var/lib/mysql/
     ports:
       - "3306:3306"
