@@ -1,3 +1,4 @@
+FROM composer:2 AS composer
 FROM php:7.2-apache
 
 RUN apt-get update \
@@ -7,10 +8,9 @@ RUN apt-get update \
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-FROM composer:latest as composer
-COPY --from=composer /usr/bin/composer /usr/bin/composer
-
 COPY docker/ensure_deps.sh /usr/bin/ensure_deps
+
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 EXPOSE 8000
 

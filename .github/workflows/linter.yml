@@ -31,14 +31,6 @@ jobs:
           fetch-depth: 0
 
       ################################
-      # Setup PHP dependencies #
-      ################################
-      - name: Laravel setup
-        run: |
-          cd backend
-          composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-
-      ################################
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
