@@ -1,6 +1,7 @@
 FROM composer:2 AS composer
 FROM php:7.2-apache
 
+# hadolint ignore=DL3008
 RUN apt-get update \
     && apt-get install -y --no-install-recommends libxml2-dev git unzip \
     && rm -rf /var/lib/apt/lists/* \
